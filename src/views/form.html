@@ -1,0 +1,52 @@
+<h2>Ajouter une question</h2>
+
+<div>
+    <form id="myForm" action="#" method="POST">
+        <div class="form-group">
+            <label for="titre">Titre du questionnaire:</label>
+            <input class="form-control" type="text" name="titre" id="titre" placeholder="Titre" required>
+        </div>
+        <div class="form-group">
+            <label for="question">Question 1:</label>
+            <input class="form-control" type="text" name="question" id="question" placeholder="Question" required>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="reponse1">Réponse 1:</label>
+                <input class="form-control" type="text" name="reponse1" id="reponse1" placeholder="Réponse A" >
+                <select class="form-control" name="true1" id="true1">
+                    <option value="0">Réponse Fausse</option>
+                    <option value="1">Réponse Vraie</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="reponse2">Réponse 2:</label>
+                <input class="form-control" type="text" name="reponse2" id="reponse2" placeholder="Réponse B" >
+                <select  class="form-control" name="true2" id="true2">
+                    <option value="0">Réponse Fausse</option>
+                    <option value="1">Réponse Vraie</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="reponse3">Réponse 3:</label>
+                <input class="form-control" type="text" name="reponse3" id="reponse3" placeholder="Réponse C" >
+                <select class="form-control" name="true3" id="true3">
+                    <option value="0">Réponse Fausse</option>
+                    <option value="1">Réponse Vraie</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="reponse4">Réponse 4:</label>
+                <input class="form-control" type="text" name="reponse4" id="reponse4" placeholder="Réponse D" >
+                <select class="form-control" name="true4" id="true4">
+                    <option value="0">Réponse Fausse</option>
+                    <option value="1">Réponse Vraie</option>
+                </select>
+            </div>
+        </div>
+        <button id="submit" type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+</div>

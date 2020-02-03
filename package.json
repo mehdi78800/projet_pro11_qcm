@@ -1,0 +1,19 @@
+{
+  "name": "qcm",
+  "version": "1.0.0",
+  "description": "Projet QCM PRO11",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "qcm",
+    "cours",
+    "JS2"
+  ],
+  "author": "REGRAGUI Mehdi",
+  "license": "ISC",
+  "dependencies": {
+    "vanilla-router": "^1.2.7"
+  }
+}
