@@ -1,19 +1,20 @@
 <h2>Ajouter une question</h2>
-
+<button class="btn" id="voiceOn">mic on</button>
+<button class="btn d-none" id="voiceOff">mic off</button>
 <div>
     <form id="myForm" action="#" method="POST">
         <div class="form-group">
-            <label for="titre">Titre du questionnaire:</label>
+            <label for="titre">Titre</label>
             <input class="form-control" type="text" name="titre" id="titre" placeholder="Titre" required>
         </div>
         <div class="form-group">
-            <label for="question">Question 1:</label>
+            <label for="question">Question:</label>
             <input class="form-control" type="text" name="question" id="question" placeholder="Question" required>
         </div>
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="reponse1">Réponse 1:</label>
-                <input class="form-control" type="text" name="reponse1" id="reponse1" placeholder="Réponse A" >
+                <input class="form-control false" type="text" name="reponse1" id="reponse1" placeholder="Réponse 1" >
                 <select class="form-control" name="true1" id="true1">
                     <option value="0">Réponse Fausse</option>
                     <option value="1">Réponse Vraie</option>
@@ -21,7 +22,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="reponse2">Réponse 2:</label>
-                <input class="form-control" type="text" name="reponse2" id="reponse2" placeholder="Réponse B" >
+                <input class="form-control false" type="text" name="reponse2" id="reponse2" placeholder="Réponse 2" >
                 <select  class="form-control" name="true2" id="true2">
                     <option value="0">Réponse Fausse</option>
                     <option value="1">Réponse Vraie</option>
@@ -32,7 +33,7 @@
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="reponse3">Réponse 3:</label>
-                <input class="form-control" type="text" name="reponse3" id="reponse3" placeholder="Réponse C" >
+                <input class="form-control false" type="text" name="reponse3" id="reponse3" placeholder="Réponse 3" >
                 <select class="form-control" name="true3" id="true3">
                     <option value="0">Réponse Fausse</option>
                     <option value="1">Réponse Vraie</option>
@@ -40,13 +41,33 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="reponse4">Réponse 4:</label>
-                <input class="form-control" type="text" name="reponse4" id="reponse4" placeholder="Réponse D" >
+                <input class="form-control false" type="text" name="reponse4" id="reponse4" placeholder="Réponse 4" >
                 <select class="form-control" name="true4" id="true4">
                     <option value="0">Réponse Fausse</option>
                     <option value="1">Réponse Vraie</option>
                 </select>
             </div>
         </div>
-        <button id="submit" type="submit" class="btn btn-primary">Envoyer</button>
+        <button id="submit" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modalSubmit">Envoyer</button>
     </form>
 </div>
+
+<!-- Modal -->
+  <div class="modal fade" id="modalSubmit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:rgb(67, 34, 56);">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="submitModalLabel">Ajout Question</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          La question à bien été ajoutée !
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary col-md-12" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>

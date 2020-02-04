@@ -11,7 +11,8 @@ body{
     color: white;
     height: 100vh;
     width: 100vw;
-    background: rgb(67, 34, 56);
+    background: rgba(67, 34, 56, 1);
+    /* background-image: url("../images/wallpaper.png"); */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -40,4 +41,28 @@ nav{
 
 #submit:hover{
     transform: scale(0.99);
+}
+
+.true{
+    border : 3px solid #16a085;
+}
+
+.false{
+    border : 3px solid red;
+}
+
+.trueModif{
+    color : #16a085;
+}
+
+.falseModif{
+    color : red;
+}
+
+.fa:hover{
+    transform: scale(1.2);
+    border-radius: 8px;
+    box-shadow:
+        0 0 50px 10px white; /* outer cyan */
+}
 }

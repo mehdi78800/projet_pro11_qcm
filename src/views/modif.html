@@ -1,0 +1,92 @@
+<h2>Modifier une question</h2>
+
+
+
+<div>
+    <table id="listeQuestions" class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Categorie</th>
+                <th scope="col">Question</th>
+                <th scope="col">Reponse 1</th>
+                <th scope="col">Reponse 2</th>
+                <th scope="col">Reponse 3</th>
+                <th scope="col">Reponse 4</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalModif" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" style="color:rgb(67, 34, 56);">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Modification de la question</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div>
+                <form id="myFormModif" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="titre">Titre</label>
+                        <input class="form-control" type="text" name="titre" id="titre" placeholder="Titre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="question">Question:</label>
+                        <input class="form-control" type="text" name="question" id="question" placeholder="Question" required>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="reponse1">Réponse 1:</label>
+                            <input class="form-control false" type="text" name="reponse1" id="reponse1" placeholder="Réponse 1" >
+                            <select class="form-control" name="true1" id="true1">
+                                <option value="0">Réponse Fausse</option>
+                                <option value="1">Réponse Vraie</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="reponse2">Réponse 2:</label>
+                            <input class="form-control false" type="text" name="reponse2" id="reponse2" placeholder="Réponse 2" >
+                            <select  class="form-control" name="true2" id="true2">
+                                <option value="0">Réponse Fausse</option>
+                                <option value="1">Réponse Vraie</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="reponse3">Réponse 3:</label>
+                            <input class="form-control false" type="text" name="reponse3" id="reponse3" placeholder="Réponse 3" >
+                            <select class="form-control" name="true3" id="true3">
+                                <option value="0">Réponse Fausse</option>
+                                <option value="1">Réponse Vraie</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="reponse4">Réponse 4:</label>
+                            <input class="form-control false" type="text" name="reponse4" id="reponse4" placeholder="Réponse 4" >
+                            <select class="form-control" name="true4" id="true4">
+                                <option value="0">Réponse Fausse</option>
+                                <option value="1">Réponse Vraie</option>
+                            </select>
+                        </div>
+                    </div><hr>
+                    <div class="row justify-content-around">
+                        <button id="modif" type="submit" class="btn btn-primary col-md-5">Modifier</button>
+                        <button type="button" class="btn btn-secondary col-md-5" data-dismiss="modal">Fermer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

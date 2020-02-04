@@ -1,4 +1,5 @@
 import app from '../../app/app.js';
+import Question from '../models/Question.js';
 
 
 export default class Form {
@@ -11,12 +12,11 @@ export default class Form {
 
     executeJS() {
         
-        var i = 0;
-
         window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
         var recognition = new SpeechRecognition();
-        recognition.interimResults = true;
+        recognition.interimResults = false;
+        // recognition.continuous = true;
 
         var question = document.getElementById('question');
         var reponse1 = document.getElementById('reponse1');
@@ -70,47 +70,122 @@ export default class Form {
                     titre.value = transcriptFilter;                    
                 }
 
+                if(transcript.includes("la réponse") && transcript.includes("une bonne réponse")&& transcript.startsWith("la réponse",0)){
+                    var reponse = transcript.charAt(11);    
+                    switch(reponse){
+                        case 'u':
+                            document.getElementById("true1").selectedIndex = 1;
+                            $( "#reponse1" ).removeClass( "false" ).addClass( "true" );
+                        break;
+
+                        case 'd':
+                            document.getElementById("true2").selectedIndex = 1;
+                            $( "#reponse2" ).removeClass( "false" ).addClass( "true" );
+
+                        break;
+
+                        case '3':
+                            document.getElementById("true3").selectedIndex = 1;
+                            $( "#reponse3" ).removeClass( "false" ).addClass( "true" );
+
+                        break;
+
+                        case '4':
+                            document.getElementById("true4").selectedIndex = 1;
+                            $( "#reponse4" ).removeClass( "false" ).addClass( "true" );
+
+                        break;
+                    }               
+                }
+
+                if(transcript.includes("la réponse") && transcript.includes("une mauvaise réponse")&& transcript.startsWith("la réponse",0)){
+                    var reponse = transcript.charAt(11);   
+                    switch(reponse){
+                        case 'u':
+                            document.getElementById("true1").selectedIndex = 0;
+                            $( "#reponse1" ).removeClass( "true" ).addClass( "false" );
+                        break;
+
+                        case 'd':
+                            document.getElementById("true2").selectedIndex = 0;
+                            $( "#reponse2" ).removeClass( "true" ).addClass( "false" );
+
+                        break;
+
+                        case '3':
+                            document.getElementById("true3").selectedIndex = 0;
+                            $( "#reponse3" ).removeClass( "true" ).addClass( "false" );
+
+                        break;
+
+                        case '4':
+                            document.getElementById("true4").selectedIndex = 0;
+                            $( "#reponse4" ).removeClass( "true" ).addClass( "false" );
+
+                        break;
+                    }               
+                }
+
                 if(transcript.includes("envoie le formulaire") && transcript.startsWith("envoie",0)){
                     recognition.addEventListener('end', recognition.start);
-                    console.log("coucou");
                     $("#submit").trigger("click");
+                    
                 }
                 
 
             console.log(transcript);
         });
+        
+        $("#voiceOn").click(function(){
+            console.log("J'écoute...")
+            // recognition.addEventListener('end', recognition.start);
+            recognition.start();
+            $("#voiceOff").removeClass("d-none");
+        })
 
-        recognition.addEventListener('end', recognition.start);
+        $("#voiceOff").click(function(){
+            console.log("Au revoir")
+            recognition.onspeechend = function() {
+                recognition.stop();
+              }
+              
+        })
 
-        recognition.start();
 
         document.querySelector('form').addEventListener('submit', function(e) {
 
             e.preventDefault()
 
-            i++;
-            
             var questionnaire  = {
-                Titre:     document.getElementById('titre').value,
+                Titre: titre.value,
 
-                Question1: document.getElementById('question').value,
+                Question: document.getElementById('question').value,
 
-                A:         document.getElementById('reponse1').value,
-                statutA:   document.getElementById('true1').value,
-
-                B:         document.getElementById('reponse2').value,
-                statutB:   document.getElementById('true2').value,
-
-                C:         document.getElementById('reponse3').value,
-                statutC:   document.getElementById('true3').value,
-
-                D:         document.getElementById('reponse4').value,
-                statutD:   document.getElementById('true4').value,
+                Reponses: {
+                    Reponse1: reponse1.value,
+                    statut1: document.getElementById('true1').value,
+    
+                    Reponse2: reponse2.value,
+                    statut2: document.getElementById('true2').value,
+    
+                    Reponse3: reponse3.value,
+                    statut3: document.getElementById('true3').value,
+    
+                    Reponse4: reponse4.value,
+                    statut4:document.getElementById('true4').value
+                }
             }
 
-            localStorage.setItem('Question'+i , JSON.stringify(questionnaire));
+            var question = new Question();
+            var key = question.keyGenerate();
 
-            console.log(localStorage.getItem('Question'+i));
+            question.insertLocal(key, questionnaire);
+
+            question.getLocal(key);
+            console.log(question.getAllLocal());
+
+            // question.clearLocal();
+
 
             
           })
