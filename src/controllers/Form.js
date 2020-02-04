@@ -137,18 +137,18 @@ export default class Form {
         });
         
         $("#voiceOn").click(function(){
-            console.log("J'écoute...")
+            console.log("Enregistrement en cours...")
             // recognition.addEventListener('end', recognition.start);
             recognition.start();
             $("#voiceOff").removeClass("d-none");
+            $("#voiceOn").addClass("d-none");
         })
 
         $("#voiceOff").click(function(){
-            console.log("Au revoir")
-            recognition.onspeechend = function() {
-                recognition.stop();
-              }
-              
+            console.log("Enregistrement terminé.")
+                recognition.abort();
+            $("#voiceOff").addClass("d-none");
+            $("#voiceOn").removeClass("d-none");
         })
 
 
