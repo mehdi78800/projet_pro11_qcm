@@ -6,7 +6,7 @@ export default class Question {
     }
 
     getLocal(key){
-        console.log(localStorage.getItem(key));
+        return localStorage.getItem(key);
     }
 
     getAllLocal(){
@@ -15,10 +15,28 @@ export default class Question {
         i = keys.length;
 
         while ( i-- ) {
-            values.push({"clé": keys[i], "valeur": localStorage.getItem(keys[i])});
+            if(!keys[i].startsWith("quizz")){
+                values.push({"clé": keys[i], "valeur": localStorage.getItem(keys[i])});
+            }
         }
 
         return values;
+    }
+
+    getAllQuizz(){
+
+        var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+        while ( i-- ) {
+            if(keys[i].startsWith("quizz")){
+                values.push({"clé": keys[i], "valeur": localStorage.getItem(keys[i])});
+            }
+        }
+
+        return values;
+
     }
 
     removeLocal(key){

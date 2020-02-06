@@ -152,7 +152,7 @@ export default class Form {
         })
 
 
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('#myForm').addEventListener('submit', function(e) {
 
             e.preventDefault()
 
@@ -181,8 +181,8 @@ export default class Form {
 
             question.insertLocal(key, questionnaire);
 
-            question.getLocal(key);
-            console.log(question.getAllLocal());
+            // question.getLocal(key);
+            // console.log(question.getAllLocal());
 
             // question.clearLocal();
 

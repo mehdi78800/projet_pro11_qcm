@@ -1,5 +1,97 @@
-<h2>Bienvenue sur QuizzFight</h2>
+<h2>Bienvenue sur TimeQuizz</h2>
 
-<div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero reprehenderit voluptatem, exercitationem aliquam dolore vel autem? Ratione soluta, inventore, amet illo ad, dolorem minima est ipsum cum reiciendis impedit placeat!
+<div class="container" style="margin-top: 20vh; text-align: center;">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" id="start" class="btn btn-warning"  style="width: 50%;" data-toggle="modal" data-target="#modalStart">commencer</button>
+        </div>
+    </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalStart" tabindex="-1" role="dialog" aria-labelledby="startModalLabel" aria-hidden="true" style="color:rgb(67, 34, 56);">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="startModalLabel">Choisis ton thème</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="modalQuizz" tabindex="-1" role="dialog" aria-labelledby="quizzModalLabel" aria-hidden="true" style="color:rgb(67, 34, 56);">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="quizzModalLabel">Construis ton Quizz</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="quizzNom">Nom du Quizz:</label>
+          <input type="text" class="form-control" name="quizzNom" id="quizzNom">
+          <label for="tempsQuizz">Temps du Quizz (en secondes):</label>
+          <input type="number" min="60" max="300" step="10" class="form-control" name="tempsQuizz" id="tempsQuizz">
+          <label for="inputlist">Ajoute des questions:</label><br>
+          <select class="selectpicker" id="datalist" name="questionSelect" data-live-search="true" data-width="100%"></select>
+           
+           <br>
+           <br>
+           
+           <button type="button" id="addQuestion" class="btn btn-success">Ajouter</button>
+           <hr>
+           
+           <br>
+           <div id="questionsCards" class="row"></div>
+           <br>
+           <hr>
+           <button type="button" id="validQuizz" class="btn btn-success" data-toggle="modal" data-target="#modalStart">Valider le Quizz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalGame" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true" style="color:rgb(67, 34, 56);">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="gameModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" id="validReponseQuizz" class="btn btn-success">Terminer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalFin" tabindex="-1" role="dialog" aria-labelledby="finModalLabel" aria-hidden="true" style="color:rgb(67, 34, 56);">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="finModalLabel">Bravo !</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Fini !</div>
+        </div>
+      </div>
+    </div>

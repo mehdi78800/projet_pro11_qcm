@@ -2,8 +2,8 @@
 
 
 
-<div>
-    <table id="listeQuestions" class="table table-striped table-dark">
+<div class="table-responsive">
+    <table id="listeQuestions" class="table table-striped table-dark"  cellspacing="1">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -36,26 +36,30 @@
             <div>
                 <form id="myFormModif" action="#" method="POST">
                     <div class="form-group">
-                        <label for="titre">Titre</label>
-                        <input class="form-control" type="text" name="titre" id="titre" placeholder="Titre" required>
+                        <label for="idModif">Identifiant</label>
+                        <input class="form-control" type="text" name="idModif" id="idModif" placeholder="Identifiant" required>
                     </div>
                     <div class="form-group">
-                        <label for="question">Question:</label>
-                        <input class="form-control" type="text" name="question" id="question" placeholder="Question" required>
+                        <label for="titreModif">Titre</label>
+                        <input class="form-control" type="text" name="titreModif" id="titreModif" placeholder="Titre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionModif">Question:</label>
+                        <input class="form-control" type="text" name="questionModif" id="questionModif" placeholder="Question" required>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="reponse1">Réponse 1:</label>
-                            <input class="form-control false" type="text" name="reponse1" id="reponse1" placeholder="Réponse 1" >
-                            <select class="form-control" name="true1" id="true1">
+                            <label for="reponse1Modif">Réponse 1:</label>
+                            <input class="form-control false" type="text" name="reponse1Modif" id="reponse1Modif" placeholder="Réponse 1" >
+                            <select class="form-control" name="true1Modif" id="true1Modif">
                                 <option value="0">Réponse Fausse</option>
                                 <option value="1">Réponse Vraie</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="reponse2">Réponse 2:</label>
-                            <input class="form-control false" type="text" name="reponse2" id="reponse2" placeholder="Réponse 2" >
-                            <select  class="form-control" name="true2" id="true2">
+                            <label for="reponse2Modif">Réponse 2:</label>
+                            <input class="form-control false" type="text" name="reponse2Modif" id="reponse2Modif" placeholder="Réponse 2" >
+                            <select  class="form-control" name="true2Modif" id="true2Modif">
                                 <option value="0">Réponse Fausse</option>
                                 <option value="1">Réponse Vraie</option>
                             </select>
@@ -64,25 +68,25 @@
 
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="reponse3">Réponse 3:</label>
-                            <input class="form-control false" type="text" name="reponse3" id="reponse3" placeholder="Réponse 3" >
-                            <select class="form-control" name="true3" id="true3">
+                            <label for="reponse3Modif">Réponse 3:</label>
+                            <input class="form-control false" type="text" name="reponse3Modif" id="reponse3Modif" placeholder="Réponse 3" >
+                            <select class="form-control" name="true3Modif" id="true3Modif">
                                 <option value="0">Réponse Fausse</option>
                                 <option value="1">Réponse Vraie</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="reponse4">Réponse 4:</label>
-                            <input class="form-control false" type="text" name="reponse4" id="reponse4" placeholder="Réponse 4" >
-                            <select class="form-control" name="true4" id="true4">
+                            <label for="reponse4Modif">Réponse 4:</label>
+                            <input class="form-control false" type="text" name="reponse4Modif" id="reponse4Modif" placeholder="Réponse 4" >
+                            <select class="form-control" name="true4Modif" id="true4Modif">
                                 <option value="0">Réponse Fausse</option>
                                 <option value="1">Réponse Vraie</option>
                             </select>
                         </div>
-                    </div><hr>
-                    <div class="row justify-content-around">
+                    </div>
+                    <div class="row justify-content-around modal-footer">
                         <button id="modif" type="submit" class="btn btn-primary col-md-5">Modifier</button>
-                        <button type="button" class="btn btn-secondary col-md-5" data-dismiss="modal">Fermer</button>
+                        <button type="button"  id="dismiss" class="btn btn-secondary col-md-5" data-dismiss="modal">Fermer</button>
                     </div>
                 </form>
             </div>

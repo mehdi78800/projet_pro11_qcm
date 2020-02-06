@@ -12,29 +12,42 @@ body{
     height: 100vh;
     width: 100vw;
     background: rgba(67, 34, 56, 1);
-    /* background-image: url("../images/wallpaper.png"); */
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 nav{
     background-color: inherit;
+    background-image: url("../images/wallpaper.png");
+    background-size: 100px;
+    background-repeat: repeat;
     border-bottom: 1px solid white!important;
 }
 
-.nav-link{
+.nav-link, h2{
     color: white!important;
+    text-shadow: black 3px 4px;
+    text-align: center;
+}
+
+h6{
+    text-shadow: black 1px 1px;
+    text-align: center;
 }
 
 .nav-link:hover{
     color: rgb(186, 63, 92)!important;
+    transform: scale(1.2);
 }
 
 .navbar-brand, .log{
     color: rgb(186, 63, 92)!important;
+    text-shadow: black 3px 4px;
 }
 
-#submit{
+.navbar-brand:hover{
+    transform: scale(1.4);
+}
+
+#submit, #validReponseQuizz{
     border-radius: 8px;
     width: 100%;
 }
@@ -43,12 +56,29 @@ nav{
     transform: scale(0.99);
 }
 
+#validReponseQuizz, #start:hover, #addQuestion:hover, .card:hover, #voiceOn:hover, #voiceOff:hover, #validQuizz:hover{
+    transform: scale(0.95);
+}
+
+#validReponseQuizz, #addQuestion, #submit, #voiceOn, #voiceOff, #validQuizz{
+    box-shadow: black 3px 3px;
+}
+
+#addQuestion, #validQuizz{
+    width: 100%;
+}
+
+#start{
+    box-shadow: black 5px 5px;
+    height: 60px;
+}
+
 .true{
     border : 3px solid #16a085;
 }
 
 .false{
-    border : 3px solid red;
+    border : 2px solid red;
 }
 
 .trueModif{
@@ -65,4 +95,78 @@ nav{
     box-shadow:
         0 0 50px 10px white; /* outer cyan */
 }
+
+#listeQuestions_wrapper .row { 
+    width: 100%;
 }
+
+#listeQuestions_length label{
+    justify-content: flex-start
+}
+
+#listeQuestions_length label select{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#listeQuestions_filter label{
+    justify-content: flex-end
+}
+
+@media only screen and (min-width: 990px){
+    #listeQuestions th {
+        white-space: nowrap;
+    }
+  }
+
+
+#modalStart .modal-content, #modalModif .modal-content, #modalQuizz .modal-content, #modalGame .modal-content{
+    height: 95vh;
+} 
+
+#modalStart .modal-dialog, #modalModif .modal-dialog, #modalQuizz .modal-dialog{
+    overflow-y: initial !important;
+    /* width: 95%; */
+}
+#modalStart .modal-body, #modalModif .modal-body, #modalQuizz .modal-body, #modalGame .modal-body{
+    height: 250px;
+    overflow-y: auto;
+}
+
+/* .modal-content{
+    background-color: rgba(67, 34, 56, 1);
+    background-image: url("../images/wallpaper3.jpg");
+    background-size: cover;
+    color: white;
+} */
+
+.card{
+    text-align: center;
+    box-shadow: black 5px 3px;
+    margin: auto;
+}
+
+.selectpicker{
+    width: auto;
+}
+
+.dropdown-header{
+    font-family: initial;
+}
+
+.dropdown-item{
+    white-space: initial;
+}
+
+.timer, .score{
+    border-radius: 8px;
+}
+
+#modalGame .modal-title{
+    width: -webkit-fill-available;
+    text-align: center;
+}
+
+button[disabled] {
+    color: white;
+ }
