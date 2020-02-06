@@ -40,10 +40,7 @@ function initializeRouter() {
         AboutController.show();
     })
     
-    app.mvc.router.add('/login', function() {
-        let LoginController = new Login();
-        LoginController.show();
-    })
+
 
 
 
